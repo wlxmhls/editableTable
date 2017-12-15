@@ -8,7 +8,7 @@ cmdb_table_content记录所有表格的数据内容
 cmdb_table_head记录所有表格的表头各列名称
  - id:表自身记录的id，table_id:表格id，head_column:列号，head_content:列名
 
-
+运行： python manage.py runserver 0.0.0.0:8000
 
 ~~~ 用户登录
 ~~~~~~ 游客可查看
