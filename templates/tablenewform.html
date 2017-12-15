@@ -1,0 +1,10 @@
+<div style="width:50px;float:right;margin-right:50px;">
+  <a href="/">回首页</a>
+</div>
+<form action="/tablenew" method="post">
+  {% csrf_token %}
+  表名: <input type="text" name="table_name" size="20" maxlength="200" />
+  行数: <input type="text" name="table_cols" size="5" maxlength="4" />
+  列数: <input type="text" name="table_rows" size="5" maxlength="4" />
+  <input type="submit" value="新建表" />
+</form>

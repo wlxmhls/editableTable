@@ -1,0 +1,40 @@
+{% load lookup %}
+<div>
+
+  <a href="#" onclick="tbldiv=this.parentNode.getElementsByTagName('div')[0];tbldiv.style.display=='none'?tbldiv.style.display='':tbldiv.style.display='none';">{{ ctx.table_name }}</a>
+  <div {% ifequal hide 1 %}style="display:none"{% endifequal %}>
+    <table class="tbl">
+      <tr class="tr1">
+        <td></td>
+        {% for col in cols_range %}
+        <td><a href="#" onclick="DeleteColumn(this)">删列</a></td>
+        {% endfor %}
+        <td></td>
+      </tr>
+
+      <tr class="trHeader">
+        <td class="left">行号</td>
+        {% for head in allheads %}
+        <td class="editable{% if not forloop.last %} resizable{% endif %}">{{ head }}</td>
+        {% endfor %}
+        <td class="right">DEL</td>
+      </tr>
+
+      {% for row in rows_range %}
+      <tr>
+        <td class="left">{{ row|add:1 }}</td>
+        {% for col in cols_range %}
+        <td class="editable{% if not forloop.last %} resizable{% endif %}">{% with passed=row|multiply:ctx.table_cols %}{% with cellindex=passed|add:col %}{% with cell=allcells|lookup:cellindex %}{{ cell }}{% endwith %}{% endwith %}{% endwith %}</td>
+        {% endfor %}
+        <td class="right"><a href="#" onclick="DeleteRow(this)">删行</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <input type="button" value="新增列" onclick="AddNewColumn(this)" />
+    <input type="button" value="新增行" onclick="AddNewRow(this)" />
+    <input type="button" value="清空表" onclick="ClearTable(this)" />
+    <input type="button" value="删除表" onclick="DeleteTable(this)" />
+  </div>
+
+</div>

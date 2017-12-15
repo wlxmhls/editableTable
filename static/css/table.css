@@ -1,0 +1,43 @@
+* {
+    margin: auto;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+    padding: 5px;
+}
+
+.tbl {
+    width: 100%;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-collapse:collapse;
+}
+
+.tbl td {
+    padding: 5px;
+    border: 1px solid #666;
+    color: #333;
+}
+
+.tbl .tr1 td {
+    border: 0;
+}
+
+.tbl .trHeader td {
+    font-weight: bold;
+    color: #800000;
+    height: 30px;
+}
+
+.tbl td.left, td.right {
+    width: 50px;
+}
+
+.resizable {
+}
+
+.editable {
+}

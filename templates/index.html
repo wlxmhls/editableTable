@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>CMDB TABLE</title>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/table.css" />
+
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/static/js/table.js"></script>
+<script type="text/javascript" src="/static/js/w3.js"></script>
+</head>
+
+<body>
+
+  <div w3-include-html="/tablenewform"></div>
+  <div>
+    <label name="add new table before"></label>
+  </div>
+
+  <script type="text/javascript">
+    w3.includeHTML();
+    $(".resizable").resizable();
+    SetEditable($(".editable"));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+新建表格后，重新读取数据库，生成index.html
+
+点击新建表格后，
+cmdb_table_basic记录所有表格的基本信息
+ - id:表格id, table_name:表格名称，table_columns:表格列数，table_rows:表格行数，update_time:最后更新时间，展示部分按时间降序排列
+cmdb_table_content记录所有表格的数据内容
+ - id:表自身记录的id，table_id:表格id，cell_column:单元格所在列，cell_row:单元格所在行，cell_content:单元格内容
+cmdb_table_head记录所有表格的表头各列名称
+ - id:表自身记录的id，table_id:表格id，head_column:列号，head_content:列名
+
+
+
+~~~ 用户登录
+~~~~~~ 游客可查看
